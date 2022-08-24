@@ -19,6 +19,6 @@ from front import urls
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', include('front.urls')),
+    path('admin/', admin.site.urls),
 ]
