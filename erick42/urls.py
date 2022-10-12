@@ -18,7 +18,9 @@ from django.urls import include, path
 from front import urls
 
 
+# Wire up our API using automatic URL routing.
+# Additionally, we include login URLs for the browsable API.
 urlpatterns = [
-    path('', include('front.urls')),
-    path('admin/', admin.site.urls),
+    path("blog/", include("blog.urls")),
+    path("admin/", admin.site.urls),
 ]
