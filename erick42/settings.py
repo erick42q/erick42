@@ -29,6 +29,7 @@ DEBUG = os.getenv("DEBUG")
 
 ALLOWED_HOSTS = []
 
+LOGIN_URL = f"{BASE_DIR}blog/api-auth/login/"
 
 # Application definition
 
@@ -108,9 +109,11 @@ AUTH_PASSWORD_VALIDATORS = [
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
-    "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"
-    ]
+    "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.IsAuthenticated"],
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.BasicAuthentication",
+        "rest_framework.authentication.SessionAuthentication",
+    ],
 }
 
 # Internationalization
