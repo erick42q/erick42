@@ -15,12 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from front import urls
 
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     path("blog/", include("blog.urls")),
+    path("snippets/", include("snippets.urls")),
     path("admin/", admin.site.urls),
 ]
